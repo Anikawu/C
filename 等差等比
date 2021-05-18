@@ -1,0 +1,48 @@
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	int iStart, iEnd, iOption, iTemp, iCount=0, iSum = 0;
+	cout << "起始值：";
+	cin >> iStart;
+	cout << "結束值：";
+	cin >> iEnd;
+	cout << "選項(1.等差 2.等比)：";
+	cin >> iOption;
+	
+	if (iOption == 1)
+		cout << "等差值：";
+	else
+		cout << "等比值：";
+
+	cin >> iTemp;
+	cout << "======================================================\n";
+	cout << iStart << " 到 " << iEnd << " ,";
+	if (iOption == 1)
+		cout << "等差值 ";
+	else
+		cout << "等比值 ";
+	cout << iTemp << endl;
+
+	switch (iOption)
+	{
+		case 1:
+			for (int i = iStart; i <= iEnd; i+=iTemp)
+			{
+				cout << i << " ";
+				iSum += i; iCount++;
+			}
+			break;
+		case 2:
+			for (int i = iStart; i <= iEnd; i*=iTemp)
+			{
+				cout << i << " ";
+				iSum += i; iCount++;
+			}
+			break;
+	}
+	
+	cout << "共 " << iCount << " 個值，合計 " << iSum << endl;
+}
+
