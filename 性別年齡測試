@@ -1,0 +1,79 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int iAge;
+	char cGd;
+
+	cout << "輸入性別(F/f:女 M/m:男)：";
+	cin >> cGd;
+	if (cGd == 'F' || cGd == 'f' || cGd == 'M' || cGd == 'm')
+	{
+		cout << "輸入年齡(0~120)：";
+		cin >> iAge;
+		if (iAge >= 0 && iAge <= 120)
+		{
+			if (iAge >= 18)
+			{
+				if(cGd=='F' || cGd=='f')
+				{ cout << "成年女性\n"; }
+				else
+				{ cout << "成年男性\n"; }
+			}
+			else
+			{
+				if (cGd == 'F' || cGd == 'f')
+				{ cout << "未成年女性\n"; }
+				else
+				{ cout << "未成年男性\n"; }
+			}
+		}
+		else
+		{ cout << "年齡輸入錯誤!\n"; }
+	}
+	else
+	{ cout << "性別輸入錯誤!\n"; }
+
+}
+
+
+
+----------------------------------------------------------------------------------------------
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	int iAge;
+	char cGd;
+
+	cout << "輸入性別(F/f:女 M/m:男)：";
+	cin >> cGd;
+	if (cGd == 'F' || cGd == 'f')
+	{
+		cout << "輸入年齡(0~120)：";
+		cin >> iAge;
+		if (iAge >= 0 && iAge < 18)
+		{ cout << "未成年女性\n"; }
+		else if (iAge >= 18 && iAge<=120)
+		{ cout << "成年女性\n"; }
+		else
+		{ cout << "年齡輸入錯誤!\n"; }
+	}
+	else if (cGd == 'M' || cGd == 'm')
+	{
+		cout << "輸入年齡(0~120)：";
+		cin >> iAge;
+		if (iAge >= 0 && iAge < 18)
+		{ cout << "未成年男性\n"; }
+		else if (iAge >= 18 && iAge <= 120)
+		{ cout << "成年男性\n"; }
+		else
+		{ cout << "年齡輸入錯誤!\n"; }
+	}
+	else
+	{ cout << "性別輸入錯誤!\n"; }
+
+}
+
+
