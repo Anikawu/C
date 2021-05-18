@@ -1,0 +1,41 @@
+
+#include <iostream>
+#include <iomanip>
+//華氏 = 攝氏*(9*0.2)+32
+//攝氏 = (華氏-32)*5/9
+using namespace std;
+
+float fC2F(float fTmp)
+{ return (fTmp*(9*0.2)+32); }
+
+float fF2C(float fTmp)
+{ return ((fTmp-32)*5/9); }
+
+float fOpt(int iOpt, float fTmp)
+{
+	switch (iOpt)
+	{
+		case 1:
+			return(fC2F(fTmp));
+			break;
+		case 2:
+			return(fF2C(fTmp));
+			break;
+	}
+}
+
+int main()
+{
+	float fTmp; int iOpt; char cCtn;
+	do
+	{
+		cout << "請選擇轉換方式(1.攝氏轉華氏 2.華氏轉攝氏)：";
+		cin >> iOpt;
+		cout << "請輸入" << (iOpt == 1 ? "攝" : "華") << "氏溫度：";
+		cin >> fTmp;
+		cout << (iOpt == 1 ? "攝" : "華") << "氏溫度" << fTmp << "度等於";
+		cout << (iOpt == 1 ? "華" : "攝") << "氏"<< fOpt(iOpt,fTmp) <<"度" << endl;
+		cout << "是否繼續(Y or N)：";
+		cin >> cCtn; cout << endl;
+	} while (cCtn == 'Y');
+}
