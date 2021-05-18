@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int iAr[] = {51,3,97,62,8,17,93,56,21,65,89,7,12,85,91};
+	int iSize = sizeof(iAr) / sizeof(int);
+	bool bNxTrn;
+
+	cout << "排序前:";
+	for (int i = 0; i < iSize; i++)
+	{
+		cout << iAr[i] << " ";
+	} cout << endl << endl;
+	for (int i = 1; i < iSize; i++)
+	{
+		bNxTrn = false;
+		for (int j = 0; j < iSize - i; j++)
+		{
+			if (iAr[j] > iAr[j + 1])
+			{
+				int iTmp = iAr[j];
+				iAr[j] = iAr[j + 1];
+				iAr[j + 1] = iTmp;
+				bNxTrn = true;
+			}
+		}
+		if (!bNxTrn)
+			break;
+		cout << "第" << i << "輪:\t";
+		for (int ii = 0; ii < iSize; ii++)
+		{
+			cout << iAr[ii] << " ";
+		} cout << endl;
+	}
+	cout << "\n排序後:";
+	for (int i = 0; i < iSize; i++)
+	{
+		cout << iAr[i] << " ";
+	} cout << endl << endl;
+
+	cout << endl;
+}
+
