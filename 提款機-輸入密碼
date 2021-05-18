@@ -1,0 +1,31 @@
+
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	int iUsrPw = 8591, iIptPw, iCnt=1;
+	do
+	{
+		cout << "輸入密碼：";
+		cin >> iIptPw;
+		if(iUsrPw==iIptPw)
+		{
+			cout << "密碼正確!!\n";
+			break;
+		}
+		else
+		{
+			if (iCnt < 3)
+			{
+				cout << "密碼輸入錯誤，次數" << iCnt++ << endl;
+			}
+			else
+			{
+				cout << "密碼輸入錯誤次數過多，卡片已保留!\n";
+				break;
+			}
+		}
+	} while (true);
+}
+
