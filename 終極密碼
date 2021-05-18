@@ -1,0 +1,42 @@
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+	srand(time(NULL));
+	int iPlrGes, iPcAns, iMax = 1000, iMin = 0;
+	iPcAns = rand() % 999 + 1;
+	bool bCk=true;
+	do
+	{
+		cout << "請猜數字 ( " << iMin << " < 猜測值 < " << iMax << " )：";
+		cin >> iPlrGes;
+		if (iPlrGes > iMin && iPlrGes < iMax)
+		{
+			if (iPlrGes == iPcAns)
+			{
+				cout << "恭喜輸家出現!" << endl;
+				bCk = false;
+			}
+			else
+			{
+				if (iPlrGes > iPcAns)
+				{
+					cout << "太好了，沒猜中，您的猜測值大於答案~\n\n";
+					iMax = iPlrGes;
+				}
+				else
+				{
+					cout << "太好了，沒猜中，您的猜測值小於答案~\n\n";
+					iMin = iPlrGes;
+				}
+			}
+		}
+		else
+		{
+			cout << "輸入錯誤，需大於 " << iMin << " 且小於 " << iMax << " 之間~!!\n\n";
+		}
+	} while (bCk);
+}
+
