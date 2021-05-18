@@ -1,0 +1,17 @@
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	int iScore[6] = { 0 };
+	cout << "Int：" << sizeof(int) << endl;
+	cout << "Float：" << sizeof(float) << endl;
+	cout << "Double：" << sizeof(double) << endl;
+	cout << "Long Double：" << sizeof(long double) << endl;
+	cout << "iScore 吃的記憶體：" << sizeof(iScore) << endl;
+	cout << "陣列長度：" << sizeof(iScore) / sizeof(int) << endl;
+	cout << "陣列長度：" << sizeof(iScore) / sizeof(iScore[0]) << endl;
+	
+	cout << endl;
+}
+
