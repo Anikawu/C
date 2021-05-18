@@ -1,0 +1,38 @@
+
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	int iBT;
+	cout << "====血型選單====\n";
+	cout << "= 1.A型        =\n";
+	cout << "= 2.B型        =\n";
+	cout << "= 3.O型        =\n";
+	cout << "= 4.AB型       =\n";
+	cout << "================\n";
+	cout << "請輸入血型編號：";
+	cin >> iBT;
+	cout << "您的血型為 ";
+	switch (iBT)
+	{
+		case 1:
+			cout << "A 型" << endl;
+			break;
+		case  2:
+			cout << "B 型" << endl;
+			break;
+		case 3:
+			cout << "O 型" << endl;
+			break;
+		case 4:
+			cout << "AB 型" << endl;
+			break;
+		default:
+			cout << "異型" << endl;
+			break;
+	}
+	
+}
+
+
