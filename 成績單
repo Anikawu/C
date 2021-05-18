@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int iScore[6] = { 0 };
+	cout << "國文成績：";
+	cin >> iScore[0];
+	cout << "英文成績：";
+	cin >> iScore[1];
+	cout << "數學成績：";
+	cin >> iScore[2];
+	cout << "社會成績：";
+	cin >> iScore[3];
+	cout << "地理成績：";
+	cin >> iScore[4];
+	iScore[5] = iScore[0] + iScore[1] + iScore[2] + iScore[3] + iScore[4];
+	cout << "====================================================================\n";
+	cout << "國文\t英文\t數學\t社會\t地理\t總分\n";
+	cout << iScore[0] << "\t";
+	cout << iScore[1] << "\t";
+	cout << iScore[2] << "\t";
+	cout << iScore[3] << "\t";
+	cout << iScore[4] << "\t";
+	cout << iScore[5] << "\t";
+	cout << endl;
+}
+
