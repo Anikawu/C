@@ -1,0 +1,41 @@
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+	int iShop, iPay, iMoney;
+	int iM[][10] = { {2000,1000,500,200,100,50,20,10,5,1},{0} };
+	cout << "購物金額：";
+	cin >> iShop;
+	cout << "付款金額：";
+	cin >> iPay;
+	iMoney = iPay - iShop;
+	cout << "找零金額：" << iMoney << endl;
+	//下方找零計算
+	for (int i = 0; i < 10;)
+	{
+		if (iMoney >= iM[0][i])
+		{
+			iMoney -= iM[0][i];
+			iM[1][i]++;
+		}
+		else
+		{ i++; }
+		//iM[1][i] = iMoney / iM[0][i];
+		//iMoney %= iM[0][i];
+	}
+	//上方找零計算
+	for (int i = 1; i <= 58; i++)
+	{ cout << "="; } cout << endl;
+	for (int i = 0; i < 2; i++)
+	{
+		cout << (i == 0 ? "幣值" : "找零數") << "\t";
+		for (int j = 0; j < 10; j++)
+		{
+			cout << setw(5) << iM[i][j];
+		} cout << endl;
+	}
+	for (int i = 1; i <= 58; i++)
+	{ cout << "="; } cout << endl;
+}
