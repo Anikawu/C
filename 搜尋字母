@@ -1,0 +1,25 @@
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	char cFindChar,cWd[] = "Today is a good day. I am happy. Are you happy?";
+	char* cPt = cWd;
+	int i, iSize = sizeof(cWd) - 1,iCnt=0;
+	cout << "字串：";
+	for (i = 0; i < iSize; i++)
+	{
+		cout << *(cPt + i);
+	} cout << "\n";
+	cout << "請輸入搜尋字母：";
+	cin >> cFindChar;
+	i = 0;
+	while (cWd[i] != '\0')
+	{
+		if (*(cPt + i++) == cFindChar)
+			iCnt++;
+	}
+
+	cout << "字母" << cFindChar << "共" << iCnt << "個" << endl;
+}
+
